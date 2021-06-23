@@ -13,7 +13,7 @@ function App() {
   const state = useSelector(rootState => rootState);
   const dispatch = useDispatch();
 
-  const fetchWeatherData = (city) => {
+  const fetchWeatherData = () => {
     if (!city) {
       return;
     }
@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <div>
         <SearchInput placeholder="Type the city name" onChange={(e) => setCity(e.target.value)} />
-        <SearchButton onClick={() => fetchWeatherData(city)} />
+        <SearchButton onClick={() => fetchWeatherData()} />
         {state.error && <p style={{ color: 'red', textAlign: 'center' }}>{state.error}</p>}
       </div>
       {state.data.list && (
