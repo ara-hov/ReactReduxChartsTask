@@ -9,7 +9,6 @@ function* getWeatherForecast(action) {
     const weatherData = yield call(getWeatherData, action.payload);
     yield put({ type: actions.SET_DATA, payload: weatherData.data });
   } catch (e) {
-    console.dir(e);
     yield put({ type: actions.SET_DATA, payload: [] });
     yield put({ type: actions.SET_ERROR, payload: e.response.data.message });
   }

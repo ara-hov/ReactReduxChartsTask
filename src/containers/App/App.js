@@ -20,8 +20,6 @@ function App() {
     dispatch(loadData(city));
   }
 
-  console.log(state);
-
   return (
     <div className="App">
       <div>
