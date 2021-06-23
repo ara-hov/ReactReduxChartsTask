@@ -25,6 +25,7 @@ function App() {
       <div>
         <SearchInput placeholder="Type the city name" onChange={(e) => setCity(e.target.value)} />
         <SearchButton onClick={() => fetchWeatherData()} />
+        {state.loading && <p style={{ textAlign: 'center' }}>Loading...</p>}
         {state.error && <p style={{ color: 'red', textAlign: 'center' }}>{state.error}</p>}
       </div>
       {state.data.list && (
